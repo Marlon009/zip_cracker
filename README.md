@@ -33,10 +33,10 @@ sudo pacman -S libzip gcc
 Compilação: g++ -o cracker cracker.cpp -lzip -std=c++17 -pthread
 
 # Ataque básico
-./zipcracker backup.zip rockyou.txt
+./cracker backup.zip rockyou.txt
 
 # Com mutação nível 2
-./zipcracker -m 2 arquivo.zip lista_senhas.txt
+./cracker -m 2 arquivo.zip lista_senhas.txt
 
 🧩 Funcionalidades
 Sistema de Mutação
