@@ -5,7 +5,8 @@
 
 Ferramenta avançada para testes de penetração em arquivos ZIP protegidos por senha.
 
-![ASCII Art](https://i.imgur.com/3kzLQ9m.png)
+![cracker](https://github.com/user-attachments/assets/fecb8e86-a64d-4c77-8ef4-e28b002e6de5)
+
 
 ## 🚀 Recursos
 - Ataque de dicionário com multi-threading
