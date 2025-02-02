@@ -1,130 +1,75 @@
-# zip_cracker
-                                                                                           
-                                                           A8sof6W nCop                             
-                                                         UMKeJ8Z zrqA                               
-                          aSc7AS                       AzZK8sAAA2AFwTRU                             
-                             IKHLEDOfT                 KAPBIQRjpYZJny                               
-                     zgKc8cZq64  AiZE9JCSdJ   ummgp271HaqDiZ3FExSZa8 QK                             
-                       n7KpCXgMDQBekgZFCAglJvMBEDcBA5KCDpu TKT0Uc3llMZ                              
-                        WflZHAROaFLBAVMZH5hKUUAPgQaDWFDVclt8zaA62xqi                                
-                         GXS4Ek07AA9GKECAATJABACFPVjGAHLNYWYw TAj3Gk                                
-                            IT3DCNJPEkXFFUK85UASFJWVLEDDCiWRVZr LQKWz                               
-                             G0o54lNAAAxBFKCCAE8AscA4dAHKCFltW1jvz5EGG                              
-                              cqQT7BAHA2dZYk8TCHIX8YAXYOEoKAU5Hjhbxx                                
-                                 IU9lQ1rrhAM7JDYFZcLpCO3EN6OOB4p1Iquw zq7                            
-                                    AAAcF4qXMGABACDC7HAGANCDBBHQoyysKA5                            
-                                 mAHUAAAADAAICbYChgosrEXLDlAGE6MHv zzAm                             
-                               tjpyppz2q shjnhgp6ccAPiApmARA0OcRoowxt2                              
-                            TonevuzxyvAE8NvzyiztezzzTXyRyvmqVACqjArWeg                              
-                          qZAtcwt7mAYeWgzxywtxyzqowWMszV5 IlEAAAAOyQrR                              
-                         9U3rnxzzAUbL3rwxxwyvayeXdaZ6JLPEMPE   UBLvxjkz                             
-                         Ao7f3tUFMvqUowruyxvolABA6ABAYGD        AAxufn2                             
-                        REDorzqAAW3 xzzyzuZwqcmCA               A5FynuRr                            
-                       1FpnuqzxSx zzxt0kWwsr7q                   ICtWuGa                            
-                       0EKlxzzyxzzzxna1QuxfVp                    AYyxz3y                            
-                       BAfmrz xywgdYWsuwyIC5PAAs                 HP8zz0  aw                         
-                       EAIQcgmpPS0DxxuooTAOOAHAMAZ                AAx9zxOobMzX                      
-                       UOGGXGFfJWzzkeVAz9oxtrxw3nzu2AADEAvA        AozvBAzDGVB                      
-                     beTDEAAAAAA9GVi7ijWOFvuuZbCsyEvSIDDM03PAD7H4BAGAfstxAC0wZBxk                   
-                 YzM60Om5AAAFHAQxAADtO7JpDu5TAGbAAAe6ru14qrsyrtiQGBvwRpikiv8ptc53d0Dic              
-                5mXqZTf8ebbQJHk80G4A4XbhAShHpAetAU6ulfprp ysvrh8 z vzzpirvubvjycy                   
-                                       sz                                                           
-     AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA     
-     AAAA A AA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA     
-     AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA   
-Zip_cracker é uma ferramenta simples de brute-force para arquivos zip usando um dicionário de palavras.
+# ZipCracker v2.0
 
-Funcionalidades:
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-lightgrey)
 
-    Quebrar senhas de arquivos ZIP protegidos.
-    Utiliza um dicionário de senhas para tentar encontrar a correta.
-    Exibe uma arte ASCII ao iniciar o programa.
+Ferramenta avançada para testes de penetração em arquivos ZIP protegidos por senha.
 
-Pré-requisitos:
+![ASCII Art](https://i.imgur.com/3kzLQ9m.png)
 
-Antes de começar, você precisará instalar as seguintes dependências:
-Dependências
+## 🚀 Recursos
+- Ataque de dicionário com multi-threading
+- Regras de mutação de senhas customizáveis
+- Interface interativa com menu
+- Seleção gráfica de arquivos
+- Progresso em tempo real com estatísticas
+- Cross-platform (Windows/Linux)
 
-    GCC/G++ (compilador C++)
-    libzip (biblioteca para manipulação de arquivos ZIP)
+## 📦 Instalação
 
-Como instalar as dependências:
-----------------
-Ubuntu/Debian:
-
+### Pré-requisitos
 bash
+# Debian/Ubuntu
+sudo apt install libzip-dev g++ build-essential
 
-sudo apt update
-sudo apt install g++ libzip-dev
-----------------
-Fedora:
+# Fedora
+sudo dnf install libzip-devel gcc-c++
 
-bash
-
-sudo dnf install gcc-c++ libzip-devel
-----------------
-macOS (via Homebrew):
-
-bash
-
-brew install gcc libzip
-----------------
-Windows:
-
-Para Windows, você pode instalar a libzip via MSYS2 ou vcpkg. Aqui está um exemplo usando vcpkg:
-
-    Instale o vcpkg:
-
-    bash
-
-git clone https://github.com/microsoft/vcpkg.git
-cd vcpkg
-./bootstrap-vcpkg.bat
-
-Instale o libzip:
-
-bash
-
-    ./vcpkg install libzip
-
-    Adicione o caminho do vcpkg à variável de ambiente PATH ou inclua o caminho ao compilar.
-----------------
+# Arch/Manjaro
+sudo pacman -S libzip gcc
 
 
-Execute o programa com o seguinte comando:
+Compilação: g++ -o cracker cracker.cpp -lzip -std=c++17 -pthread
 
-bash
+# Ataque básico
+./zipcracker backup.zip rockyou.txt
 
-./zip_cracker <arquivo.zip> <dicionario.txt>
+# Com mutação nível 2
+./zipcracker -m 2 arquivo.zip lista_senhas.txt
 
-    <arquivo.zip>: O caminho para o arquivo ZIP protegido por senha.
-    <dicionario.txt>: O caminho para o arquivo de dicionário que contém possíveis senhas, uma por linha.
-----------------
-Exemplo de uso:
+🧩 Funcionalidades
+Sistema de Mutação
+Nível	Regras
+1	Adiciona sufixos numéricos
+2	Substituições leet (e → 3)
+3	Combina maiúsculas e minúsculas
+Estatísticas em Tempo Real
+Copy
+[+] Progresso:    1500 senhas | Tempo:    5s |    300 p/s | Descompactando... /
+⚠️ Aviso Legal
+Este software destina-se exclusivamente para:
 
-bash
+Testes de penetração autorizados
 
-./zip_cracker arquivo_protegido.zip dicionario.txt
+Recuperação de arquivos próprios
 
-Se a senha for encontrada no dicionário, o programa exibirá:
+Pesquisa em segurança digital
 
-css
+É estritamente proibido utilizar esta ferramenta para quaisquer atividades ilegais.
 
-[+] Password found: <senha>
+📄 Licença
+Distribuído sob licença GPL-3.0. Veja o arquivo LICENSE para mais detalhes.
 
-Caso contrário, será exibida a mensagem:
+👨💻 Desenvolvedor
+Marlon - GitHub
 
-css
+🙌 Contribuição
+Contribuições são bem-vindas! Abra um issue ou pull request para:
 
-[-] Password not found in the dictionary.
+Reportar bugs
 
-Contribuições
+Sugerir melhorias
 
-Sinta-se à vontade para abrir issues ou enviar pull requests para melhorias ou correções.
+Adicionar novas funcionalidades
 
-Este projeto é licenciado sob a MIT.
-Notas
-
-    A biblioteca libzip não está inclusa no projeto. Siga as instruções acima para instalá-la no seu sistema antes de compilar o programa.
-
-    
+Nota: Mantenha sempre autorização por escrito para qualquer teste em sistemas de terceiros.
